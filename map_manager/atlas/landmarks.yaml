@@ -1,0 +1,12 @@
+- index: 0
+  bounds:
+    min_x: 6.484375
+    min_y: -6.875
+    max_x: 11.71875
+    max_y: -1.640625
+- index: 1
+  bounds:
+    min_x: 20.9375
+    min_y: 5.78125
+    max_x: 24.14062
+    max_y: 8.671876
