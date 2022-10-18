@@ -1,12 +1,24 @@
 - index: 0
   bounds:
-    min_x: 6.484375
-    min_y: -6.875
-    max_x: 11.71875
-    max_y: -1.640625
+    min_x: 219.4123
+    min_y: -136.854
+    max_x: 233.4209
+    max_y: -121.8153
 - index: 1
   bounds:
-    min_x: 20.9375
-    min_y: 5.78125
-    max_x: 24.14062
-    max_y: 8.671876
+    min_x: 70.37439
+    min_y: -164.8712
+    max_x: 89.53322
+    max_y: -144.4763
+- index: 2
+  bounds:
+    min_x: 38.50052
+    min_y: -3.600044
+    max_x: 47.86376
+    max_y: 4.397728
+- index: 3
+  bounds:
+    min_x: -11.46494
+    min_y: 130.7192
+    max_x: -4.734328
+    max_y: 137.792

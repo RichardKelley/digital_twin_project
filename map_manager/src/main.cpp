@@ -28,7 +28,7 @@ bool get_landmark_cloud(map_manager::GetLandmarkCloud::Request& req,
 			map_manager::GetLandmarkCloud::Response& res) {
 
 
-  int idx = req.cloud_id;
+  //int idx = req.cloud_id;
   if (req.cloud_id >= atlas.landmarks.size()) {
     return false;
   }
