@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="BehaviorTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="AnalyzeImage">
+        <Sequence>
+            <Condition ID="ImageAnomalyDetected"/>
+            <Action ID="SendEmail"/>
+            <Action ID="MarkAsSeen"/>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <BehaviorTree ID="AnalyzePointCloud">
+        <Sequence>
+            <Condition ID="CloudAnomalyDetected"/>
+            <Action ID="SendEmail"/>
+            <Action ID="MarkAsSeen"/>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <BehaviorTree ID="BehaviorTree">
+        <Sequence>
+            <Condition ID="LandmarkProximity"/>
+            <Parallel failure_threshold="1" success_threshold="2">
+                <SubTree ID="AnalyzePointCloud"/>
+                <SubTree ID="AnalyzeImage"/>
+            </Parallel>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <SubTree ID="AnalyzeClouds">
+            <input_port default="false" name="__shared_blackboard">If false (default), the Subtree has an isolated blackboard and needs port remapping</input_port>
+        </SubTree>
+        <SubTree ID="AnalyzeImage"/>
+        <Action ID="AnalyzeImages"/>
+        <SubTree ID="AnalyzePointCloud"/>
+        <Action ID="AnalyzePointClouds"/>
+        <Condition ID="CloudAnomalyDetected"/>
+        <Condition ID="ImageAnomalyDetected"/>
+        <Condition ID="LandmarkProximity"/>
+        <Action ID="MarkAsSeen"/>
+        <Action ID="RetrieveLandmark">
+            <input_port name="landmark_cloud"/>
+        </Action>
+        <Action ID="SendEmail"/>
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>
